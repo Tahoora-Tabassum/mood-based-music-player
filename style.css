@@ -1,0 +1,76 @@
+html,
+body,
+.view {
+  height: 100%;
+  background-color: rgba(85, 41, 41, 0.131);
+}
+
+.header{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#mobile-box {
+  width: 360px;
+  max-width: 100%; /* Ensures it doesn't exceed screen width on smaller devices */
+}
+
+/* Assuming mood buttons are elements with class .mood-button or similar; adjust selector as needed */
+.mood-button {
+  display: inline-block; 
+  margin: 5px; 
+  width: 50px; 
+  height: 50px;
+  background-color: #f0f0f0; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Body and overall page */
+body {
+  background-color: #f0d9d9; /* Light gray background */
+  color: #333333; /* Dark gray text for readability */
+  font-family: Arial, sans-serif; /* Clean, professional font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Headers */
+h1, h2, h3 {
+  color: #08386c; /* Professional blue for headings */
+}
+
+/* Links */
+a {
+  color: #582115; /* Blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Buttons or accents (optional) */
+button, .accent {
+  background-color: #3d5389; /* Blue background */
+  color: rgb(239, 231, 237);
+  border:none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover, .accent:hover {
+  background-color: #38699d; /* Darker on hover */
+}

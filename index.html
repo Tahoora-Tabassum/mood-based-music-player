@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Music & Quotes</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>🎵 Mood Music & Quotes 🎵</h1>
+        <p class="subtitle">Find the perfect music and inspiration for your mood</p>
+    </header>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Mood Buttons -->
+        <section class="mood-section">
+            <h2>How are you feeling today?</h2>
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="happy">😊 Happy</button>
+                <button class="mood-btn" data-mood="sad">😢 Sad</button>
+                <button class="mood-btn" data-mood="motivated">💪 Motivated</button>
+                <button class="mood-btn" data-mood="stressed">😰 Stressed</button>
+            </div>
+        </section>
+
+        <!-- Display Card -->
+        <div id="cardSection" style="display:none;">
+          <!--<img id="moodImage" src="default.jpg" alt="Mood Image">-->
+          <p id="moodEmoji"></p>
+          <h2 id="moodTitle"></h2>
+          <p id="quote"></p>
+          <ul id="musicList"></ul>
+          <button id="closeBtn">Close</button>
+        </div>
+ 
+        <section class="card-section" id="cardSection" style="display: none;">
+            <div class="card">
+                <button class="close-btn" id="closeBtn">&times;</button> <!-- × symbol -->
+                <div class="emoji" id="moodEmoji">🎵</div>
+                <h2 id="moodTitle">Select a mood</h2>
+                <p class="quote" id="quote">Your quote will appear here...</p>
+                
+                <div class="music-section">
+                    <h3>Recommended Music:</h3>
+                    <!-- Music Player Controls -->
+                    <div class="music-player">
+                        <button><i class="fa-solid fa-play"></i></button>
+                        <button><i class="fa-solid fa-pause"></i></button>
+                        <button><i class="fa-solid fa-forward"></i></button>
+
+                    </div>
+                    
+                    <ul class="music-list" id="musicList">
+                        <li><a href="#" target="_blank">Music will load here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="container d-flex justify-content-center my-4 mb-5">
+            <div id="mobile-box">
+
+    <!-- Card -->
+    <div class="card">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img class="card-img-top" src="https://mdbootstrap.com/wp-content/uploads/2019/02/flam.jpg"
+          alt="Card image cap">
+
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body text-center">
+
+        <h5 class="h5 font-weight-bold"><a href="#" target="_blank">Dj Flam</a></h5>
+        <p class="mb-0">Urban Bachata remix</p>
+
+        <audio id="music" preload="true">
+          <source src="#">
+        </audio>
+        <div id="audioplayer">
+          <i id="pButton" class="fas fa-play"></i>
+          <div id="timeline">
+            <div id="playhead"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+</div>
+<!-- Content -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Created by Tahoora. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/app.js" defer></script>
+</body>
+</html>
