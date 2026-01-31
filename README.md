@@ -14,7 +14,7 @@ Choose your mood, and the app will display a matching emoji, motivational quote,
 ---
 
 ## 📸 Demo
-![Mood Music Player Screenshot](screenshot.png)  
+![Mood Music Player Screenshot](Screenshot1)(Screenshot2)  
 ---
 
 ## 🚀 Getting Started
