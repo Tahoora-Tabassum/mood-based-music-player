@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Music & Quotes</title>
+    <!-- Link to Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset and body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff; /* Light pastel background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333; /* Dark text for readability */
+        }
+
+        /* Card container */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Heading and subheading */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #4a90e2; /* Primary accent color */
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Button styling */
+        .mood-button {
+            background-color: #4a90e2; /* Accent color */
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded buttons */
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Subtle hover effect */
+        }
+
+        .mood-button:hover {
+            background-color: #357abd; /* Slightly darker on hover */
+        }
+
+        /* Results section (initially hidden) */
+        #results {
+            margin-top: 30px;
+            display: none; /* Hidden by default */
+        }
+
+        #results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        #results p {
+            margin: 10px 0;
+        }
+
+        #results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #results li {
+            margin: 5px 0;
+        }
+
+        #results a {
+            color: #4a90e2; /* Accent color for links */
+            text-decoration: none;
+        }
+
+        #results a:hover {
+            text-decoration: underline;
+        }
+
+        /* Close/Reset button */
+        #close-button {
+            background-color: #ccc; /* Neutral color */
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #close-button:hover {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Mood Music & Quotes</h1>
+        <h2>Find the perfect music and inspiration for your mood</h2>
+        
+        <!-- Mood buttons -->
+        <button class="mood-button" onclick="showMood('happy')">Happy</button>
+        <button class="mood-button" onclick="showMood('sad')">Sad</button>
+        <button class="mood-button" onclick="showMood('motivated')">Motivated</button>
+        <button class="mood-button" onclick="showMood('stressed')">Stressed</button>
+        
+        <!-- Results section -->
+        <div id="results">
+            <h3 id="mood-emoji"></h3>
+            <p id="quote"></p>
+            <p><strong>Song Recommendations:</strong></p>
+            <ul id="songs"></ul>
+            <button id="close-button" onclick="resetApp()">Close / Reset</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show mood content based on the selected mood
+        function showMood(mood) {
+            // Define data for each mood (hardcoded, no APIs)
+            // Now includes song titles and YouTube URLs
+            const moodData = {
+                happy: {
+                    emoji: "😊",
+                    quote: "Happiness is not something ready-made. It comes from your own actions. – Dalai Lama",
+                    songs: [
+                        { title: "Happy by Pharrell Williams", url: "https://www.youtube.com/watch?v=ZbZSe6N_BXs" },
+                        { title: "Can't Stop the Feeling! by Justin Timberlake", url: "https://www.youtube.com/watch?v=ru0K8ouAZ-E" },
+                        { title: "Walking on Sunshine by Katrina and the Waves", url: "https://www.youtube.com/watch?v=iPUmE-tne5U" },
+                        { title: "Uptown Funk by Mark Ronson ft. Bruno Mars", url: "https://www.youtube.com/watch?v=OPf0YbXqDm0" }
+                    ]
+                },
+                sad: {
+                    emoji: "😢",
+                    quote: "The only way out of the labyrinth of suffering is to forgive. – John Green",
+                    songs: [
+                        { title: "Someone Like You by Adele", url: "https://www.youtube.com/watch?v=hLQl3WQQoQ0" },
+                        { title: "Hurt by Nine Inch Nails", url: "https://www.youtube.com/watch?v=8qyT-wOGQzE" },
+                        { title: "Tears in Heaven by Eric Clapton", url: "https://www.youtube.com/watch?v=JxPj3GAYYZ0" },
+                        { title: "Yesterday by The Beatles", url: "https://www.youtube.com/watch?v=NrgmdOz227I" }
+                    ]
+                },
+                motivated: {
+                    emoji: "💪",
+                    quote: "The only way to do great work is to love what you do. – Steve Jobs",
+                    songs: [
+                        { title: "Eye of the Tiger by Survivor", url: "https://www.youtube.com/watch?v=btPJPFnesV4" },
+                        { title: "Don't Stop Believin' by Journey", url: "https://www.youtube.com/watch?v=1k8craCGpgs" },
+                        { title: "Stronger by Kanye West", url: "https://www.youtube.com/watch?v=PsO6ZnUZI0g" },
+                        { title: "Roar by Katy Perry", url: "https://www.youtube.com/watch?v=CevxZvSJLk8" }
+                    ]
+                },
+                stressed: {
+                    emoji: "😰",
+                    quote: "You must do the thing you think you cannot do. – Eleanor Roosevelt",
+                    songs: [
+                        { title: "Weightless by Marconi Union", url: "https://www.youtube.com/watch?v=UfcAVejs1Ac" },
+                        { title: "River by Joni Mitchell", url: "https://www.youtube.com/watch?v=8rL2c9xj__Q" },
+                        { title: "Breathe Me by Sia", url: "https://www.youtube.com/watch?v=6Cr6K-MiN3E" },
+                        { title: "The Night We Met by Lord Huron", url: "https://www.youtube.com/watch?v=KtlgYxa6BMU" }
+                    ]
+                }
+            };
+
+            // Get the data for the selected mood
+            const data = moodData[mood];
+
+            // Update the DOM elements with the data
+            document.getElementById('mood-emoji').textContent = data.emoji;
+            document.getElementById('quote').textContent = data.quote;
+
+            // Clear previous songs and add new ones as clickable links
+            const songsList = document.getElementById('songs');
+            songsList.innerHTML = ''; // Clear the list
+            data.songs.forEach(song => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.textContent = song.title;
+                a.href = song.url;
+                a.target = '_blank'; // Open in a new tab
+                li.appendChild(a);
+                songsList.appendChild(li);
+            });
+
+            // Show the results section
+            document.getElementById('results').style.display = 'block';
+        }
+
+        // Function to reset the app (hide results)
+        function resetApp() {
+            document.getElementById('results').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
