@@ -70,7 +70,6 @@ Features:
 ![Home Screen](images/screenshot1.png)
 ![Mood Result Screen](images/screenshot2.png)
 
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
