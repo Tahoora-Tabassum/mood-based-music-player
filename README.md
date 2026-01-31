@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎵Music Player Web App
 
 A modern, responsive music player web application built with **Next.js, React, TypeScript, and Tailwind CSS**.  
