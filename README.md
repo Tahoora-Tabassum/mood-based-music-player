@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎵Music Player Web App
 
 A modern, responsive music player web application built with **Next.js, React, TypeScript, and Tailwind CSS**.  
@@ -40,6 +39,11 @@ Features:
 - Play, pause, and skip music tracks
 - Responsive design for desktop and mobile
 - Clean, modern user interface
+
+## 📸 Preview
+
+![Home Screen](images/screenshot1.png)
+![Mood Result Screen](images/screenshot2.png)
 
 ## Learn More
 
